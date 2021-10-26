@@ -131,7 +131,7 @@ const ListaVentas = ({tablaVentas, setEjecutarConsulta}) => {
             })}
           </tbody>
         </table>
-        <Link to="/">
+        <Link to="/dashboard">
           <button className="bg-gray-800 my-10
              text-white rounded border p-4  hover:bg-gray-600">Página principal</button>
         </Link>
