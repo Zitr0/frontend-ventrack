@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import { Tooltip } from '@material-ui/core';
 import 'react-toastify/dist/ReactToastify.css';
 
+const BACKEND_URL = "https://backend-ventrack.herokuapp.com";
 
 const Ventas = () => {
   const [mostrarLista, setMostrarLista] = useState(true);
@@ -16,7 +17,7 @@ const Ventas = () => {
   const obtenerVentas = async () => {
     const options = {
       method: 'GET',
-      url: 'http://localhost:3001/api/venta',
+      url: `${BACKEND_URL}/api/venta`,
       headers: {'Content-Type': 'application/json'}
     };
      
@@ -49,7 +50,7 @@ const Ventas = () => {
 
   useEffect(() => {
     if(mostrarLista){
-      setTextoBoton("Crear nueva venta");
+      setTextoBoton("Agregar nueva Venta");
     }
     else{
       setTextoBoton("Volver a la lista");
@@ -58,6 +59,17 @@ const Ventas = () => {
 
   return (
     <div>
+      <div className="mx-auto bg-grey-400">
+      <header className="bg-nav">
+            <div className="flex justify-between">
+                <div className="p-1 mx-3 inline-flex items-center">
+                    <i className="fas fa-bars pr-2 text-white"></i>
+                    <h1 className="text-white p-2">Ventrack</h1>
+                </div>
+                
+            </div>
+        </header>
+      </div>
       <button onClick={() => {setMostrarLista(!mostrarLista)}} className="absolute my-10 mx-5 bg-gray-800 
       text-white rounded border p-3 hover:bg-gray-600">{textoBoton}</button>
       {mostrarLista ? (
@@ -88,24 +100,27 @@ const ListaVentas = ({tablaVentas, setEjecutarConsulta}) => {
   }, [busqueda, tablaVentas]);
 
   return(
-    <div className="flex flex-col items-center">
+    <div>
+    <div className="flex justify-end px-8">
       <input 
-        value={busqueda}
-        onChange={(e) => setBusqueda(e.target.value)}
-        placeholder="Buscar" 
-        className="border-2 border-gray-500 my-10 px-3 py-2 focus:outline-none focus:border-indigo-500" />
-      <h2 className="text-4xl font-serif my-5">Ventas</h2> 
-        <table className="w-full tabla border-separate">
+    value={busqueda}
+    onChange={(e) => setBusqueda(e.target.value)}
+    placeholder="Buscar" 
+    className="border-2 border-gray-500 my-10 px-3 py-2 focus:outline-none focus:border-indigo-500" />
+    </div>
+    <h2 className="text-4xl text-white font-serif my-5 shadow bg-warning border-l-8 border-warning-dark mb-2 p-2 md:w-1/4 mx-2">Ventas</h2> 
+    <div className="flex flex-col items-center">
+        <table className="w-full border-separate px-8">
           <thead>
             <tr>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">Id</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">Cantidad</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">Total</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">ValorUnitario</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">Fecha</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">Cliente</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">Documento</th>
-              <th className="border border-gray-400 text-gray-800 bg-gray-300">NombreDeEncargado</th>
+              <th className="text-white bg-gray-500">Id</th>
+              <th className="text-white bg-gray-500">Cantidad</th>
+              <th className="text-white bg-gray-500">Total</th>
+              <th className="text-white bg-gray-500">ValorUnitario</th>
+              <th className="text-white bg-gray-500">Fecha</th>
+              <th className="text-white bg-gray-500">Cliente</th>
+              <th className="text-white bg-gray-500">Documento</th>
+              <th className="text-white bg-gray-500">NombreDeEncargado</th>
             </tr>
           </thead>
           <tbody className="border border-gray-400 text-gray-800 bg-gray-200">
@@ -120,6 +135,7 @@ const ListaVentas = ({tablaVentas, setEjecutarConsulta}) => {
           <button className="bg-gray-800 my-10
              text-white rounded border p-4  hover:bg-gray-600">Página principal</button>
         </Link>
+    </div>
     </div>
   );
 };
@@ -144,7 +160,7 @@ const FilaVentas = ({venta, setEjecutarConsulta}) => {
     //Enviar información al backend
     const options = {
       method: 'PATCH',
-      url: 'http://localhost:3001/api/venta',
+      url: `${BACKEND_URL}/api/venta`,
       headers: {'Content-Type': 'application/json'},
       //data: {...infoNuevoProducto, id: producto._id},
       data: {...infoNuevaVenta, Id: venta.Id},
@@ -265,7 +281,7 @@ const RegistroVentas = ({setMostrarLista}) => {
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:3001/api/venta',
+      url: `${BACKEND_URL}/api/venta`,
       headers: {'Content-Type': 'application/json'},
       data: {
         Id: nuevaVenta.Id,
@@ -342,11 +358,13 @@ const RegistroVentas = ({setMostrarLista}) => {
                 <br />  
 
               <button type="submit"
-              className='col-span-2 bg-indigo-500 
-              text-white rounded border p-3 m-5 w-1/5 hover:bg-gray-400'>Agregar Venta</button>
+              className='col-span-2 bg-gray-800 
+              text-white rounded border p-3 m-5 w-1/5 hover:bg-gray-600'>Agregar Venta</button>
             </form>
         </div>
   );
 };
+
+
 
 export default Ventas;
