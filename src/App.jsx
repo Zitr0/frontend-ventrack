@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-rou
 import Ventas from './Ventas.jsx';
 import Home from './home.jsx';
 import { Auth0Provider } from "@auth0/auth0-react";
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './privateroute';
 
 class App extends React.Component {
   
