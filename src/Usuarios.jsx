@@ -71,7 +71,7 @@ const  Usuarios = () => {
       )}
       <ToastContainer position="bottom-center" autoClose={4000} />
     </div>*/}
-    <div><div></div>
+    <div><ToastContainer position="bottom-center" autoClose={4000} />
       );
 };
 
