@@ -1,4 +1,5 @@
 import React from 'react';
+import LogoutButton from './logout';
 //import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class Dashboard extends React.Component {
@@ -19,7 +20,9 @@ class Dashboard extends React.Component {
             profileDropdown.style.display = "block";
         }
     }
+  
 render() {
+
   return (
     <div class="mx-auto bg-grey-400">
    
@@ -47,10 +50,17 @@ render() {
                             <span><i class="fas fa-angle-right float-right"></i></span>
                         </a>
                     </li>
-                    
+                    <li class=" w-full h-full py-3 px-2 border-b border-light-border bg-white">
+                        <a href="#"
+                           class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
+                            <i class="fas fa-sign-out-alt float-left mx-2"></i>
+                            {LogoutButton}
+                            <span><i class="fas fa-angle-right float-right"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </aside>
-           
+         
             <main class="bg-white-300 flex-1 p-3 overflow-hidden">
                 <div class="flex flex-col">
                   
