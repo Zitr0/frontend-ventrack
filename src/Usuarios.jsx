@@ -114,7 +114,7 @@ const ListaUsuarios = ({tablaUsuarios, setEjecutarConsulta}) => {
             })}
           </tbody>
         </table>
-        <Link to="/">
+        <Link to="/dashboard">
           <button className="bg-indigo-500 my-10
              text-white rounded border p-4  hover:bg-blue-400">Página principal</button>
         </Link>
@@ -216,6 +216,7 @@ const FilaUsuarios = ({usuarios, setEjecutarConsulta}) => {
   )
 }
 
+/*
 const RegistroUsuarios = ({setMostrarLista}) => {
 
   const form = useRef(null);
@@ -291,5 +292,6 @@ const RegistroUsuarios = ({setMostrarLista}) => {
         </div>
   );
 };
+*/
 
 export default Usuarios;
