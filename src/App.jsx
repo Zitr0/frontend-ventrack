@@ -10,11 +10,12 @@ import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-rou
 import Ventas from './Ventas.jsx';
 import Home from './home.jsx';
 import { Auth0Provider } from "@auth0/auth0-react";
-import PrivateRoute from './privateroute';
+import ProtectedRoute from './auth/protected-route';
 
 class App extends React.Component {
   
 render() {
+
   return (
     <BrowserRouter>
       <Auth0Provider
@@ -25,12 +26,12 @@ render() {
           <Router>
               <Switch>
               <Route exact path='/' component={Home} />
-                <PrivateRoute exact path='/Dashboard' component={Dashboard} />
-                <PrivateRoute exact path='/login' component={Login} />
-                <PrivateRoute exact path='/register' component={Register} />
-                <PrivateRoute exact path='/RegistroUsuarios' component={RegistroUsuarios} />
-                <PrivateRoute exact path='/Productos' component={Productos} />
-                <PrivateRoute exact path='/Ventas' component = {Ventas} />
+                <ProtectedRoute exact path='/Dashboard' component={Dashboard} />
+                <ProtectedRoute exact path='/login' component={Login} />
+                <ProtectedRoute exact path='/register' component={Register} />
+                <ProtectedRoute exact path='/RegistroUsuarios' component={RegistroUsuarios} />
+                <ProtectedRoute exact path='/Productos' component={Productos} />
+                <ProtectedRoute exact path='/Ventas' component = {Ventas} />
               </Switch>   
           </Router>
       </Auth0Provider>
