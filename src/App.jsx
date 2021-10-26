@@ -19,7 +19,7 @@ render() {
     <Auth0Provider
       domain="misiontic-ventrack.us.auth0.com"
       clientId="CEQSisbcrioU2kpQlCs00D94LmXp6CP1"
-      redirectUri="http://localhost:3000/dashboard"
+      redirectUri="https://ventrack.herokuapp.com/dashboard"
     >
         <Router>
             <Switch>
