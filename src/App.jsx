@@ -24,12 +24,12 @@ render() {
           <Router>
               <Switch>
               <Route exact path='/' component={Home} />
-                <Route exact path='/Dashboard' component={Dashboard} />
-                <Route exact path='/login' component={Login} />
-                <Route exact path='/register' component={Register} />
-                <Route exact path='/RegistroUsuarios' component={RegistroUsuarios} />
-                <Route exact path='/Productos' component={Productos} />
-                <Route exact path='/Ventas' component = {Ventas} />
+                <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+                <PrivateRoute exact path='/login' component={Login} />
+                <PrivateRoute exact path='/register' component={Register} />
+                <PrivateRoute exact path='/RegistroUsuarios' component={RegistroUsuarios} />
+                <PrivateRoute exact path='/Productos' component={Productos} />
+                <PrivateRoute exact path='/Ventas' component = {Ventas} />
               </Switch>   
           </Router>
       </Auth0Provider>
