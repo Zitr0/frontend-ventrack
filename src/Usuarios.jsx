@@ -59,8 +59,8 @@ const  Usuarios = () => {
 
   return (
     <div>
-    {/*  <button onClick={() => {setMostrarLista(!mostrarLista)}} className="absolute my-10 mx-5 bg-blanco 
-      text-white ">{textoBoton}</button>
+    {/*<button onClick={() => {setMostrarLista(!mostrarLista)}} className="absolute my-10 mx-5 bg-blanco 
+      text-white ">{textoBoton}</button>*/}
       {mostrarLista ? (
       <ListaUsuarios tablaUsuarios={Usuarios} setEjecutarConsulta={setEjecutarConsulta} />
       ) : (
@@ -69,7 +69,7 @@ const  Usuarios = () => {
       tablaUsuarios = {Usuarios}
       setUsuarios = {setUsuarios}/>
       )}
-      <ToastContainer position="bottom-center" autoClose={4000} /> */}
+      <ToastContainer position="bottom-center" autoClose={4000} />
     </div>
       );
 };
