@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoutButton from './logout';
+import LogoutButton from './logout.jsx';
 //import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class Dashboard extends React.Component {
@@ -54,8 +54,7 @@ render() {
                         <a href="#"
                            class="font-sans font-hairline hover:font-normal text-sm text-nav-item no-underline">
                             <i class="fas fa-sign-out-alt float-left mx-2"></i>
-                            {LogoutButton}
-                            <span><i class="fas fa-angle-right float-right"></i></span>
+                            {LogoutButton} Salir
                         </a>
                     </li>
                 </ul>
