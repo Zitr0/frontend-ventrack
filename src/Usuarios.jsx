@@ -58,7 +58,7 @@ const  Usuarios = () => {
   }, [mostrarLista]);
 
   return (
-    <div>
+   {/* <div>
       <button onClick={() => {setMostrarLista(!mostrarLista)}} className="absolute my-10 mx-5 bg-blanco 
       text-white ">{textoBoton}</button>
       {mostrarLista ? (
@@ -70,8 +70,9 @@ const  Usuarios = () => {
       setUsuarios = {setUsuarios}/>
       )}
       <ToastContainer position="bottom-center" autoClose={4000} />
-    </div>
-  );
+    </div>*/}
+    <div><div></div>
+      );
 };
 
 
@@ -216,7 +217,7 @@ const FilaUsuarios = ({usuarios, setEjecutarConsulta}) => {
   )
 }
 
-/*
+
 const RegistroUsuarios = ({setMostrarLista}) => {
 
   const form = useRef(null);
@@ -292,6 +293,6 @@ const RegistroUsuarios = ({setMostrarLista}) => {
         </div>
   );
 };
-*/
+
 
 export default Usuarios;
