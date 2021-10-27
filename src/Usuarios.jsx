@@ -216,7 +216,7 @@ const FilaUsuarios = ({usuarios, setEjecutarConsulta}) => {
   )
 }
 
-/*
+
 const RegistroUsuarios = ({setMostrarLista}) => {
 
   const form = useRef(null);
@@ -291,7 +291,7 @@ const RegistroUsuarios = ({setMostrarLista}) => {
             </form>
         </div>
   );
-};*/
+};
 
 
 export default Usuarios;
